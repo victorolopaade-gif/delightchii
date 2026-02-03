@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noora 💕</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #0d0d0d, #1a1a1a);
+      color: #ffffff;
+      font-family: Georgia, serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .box {
+      animation: fadeIn 2.5s ease;
+      max-width: 500px;
+    }
+
+    h2 {
+      font-weight: normal;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      opacity: 0.95;
+    }
+
+    .hint {
+      margin-top: 30px;
+      font-size: 0.8rem;
+      opacity: 0.4;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body onclick="startMusic()">
+
+  <div class="box">
+    <h2>Noora 💕</h2>
+    <p>
+      Some people feel like noise,<br>
+      but you feel like peace.<br><br>
+
+      I kept thinking about you,<br>
+      and my heart wouldn’t stay quiet.<br><br>
+
+      You’re my happy space,<br>
+      and I love you —<br>
+      even in your wickedness<br>
+      and your solar-headed panel 🌚
+    </p>
+
+    <div class="hint">
+      tap anywhere 🤍
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    let started = false;
+
+    function startMusic() {
+      if (!started) {
+        music.play().catch(() => {});
+        started = true;
+      }
+    }
+  </script>
+
+</body>
+</html>
